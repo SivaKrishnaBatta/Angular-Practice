@@ -3,7 +3,7 @@ name: Angular CI Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -23,3 +23,6 @@ jobs:
 
       - name: Build Angular Application
         run: npm run build
+
+      - name: Run Unit Tests
+        run: npm test -- --watch=false --browsers=ChromeHeadless
